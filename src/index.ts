@@ -1,9 +1,13 @@
 // src/index.ts
 import express, { Application } from 'express';
+import dotenv from 'dotenv';
 import splitwiseRoutes from './routes/splitwiseRouter';
 
+dotenv.config();
+
 const app: Application = express();
-const port = 3000;
+console.log(process.env.PORT);
+const port = process.env.PORT || 3000;
 
 // Middlewares
 app.use(express.json());
