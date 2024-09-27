@@ -1,9 +1,9 @@
 // src/index.ts
 import express, { Application } from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
 import splitwiseRoutes from './routes/splitwiseRouter';
 
-dotenv.config();
 
 const app: Application = express();
 console.log(process.env.PORT);

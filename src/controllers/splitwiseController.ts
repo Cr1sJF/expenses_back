@@ -9,8 +9,8 @@ export class SplitwiseController {
     this.splitwiseService = new SplitwiseService();
   }
 
-  getGroups = (req: Request, res: Response): void => {
-    const users = this.splitwiseService.getGroups();
-    res.json(users);
+  getGroups = async (req: Request, res: Response): Promise<any> => {
+    const users = await this.splitwiseService.getGroups();
+    res.json(users.getResponse());
   };
 }
