@@ -10,7 +10,22 @@ export class SplitwiseController {
   }
 
   getGroups = async (req: Request, res: Response): Promise<any> => {
-    const users = await this.splitwiseService.getGroups();
-    res.json(users.getResponse());
+    const groups = await this.splitwiseService.getGroups();
+    res.json(groups);
+  };
+
+  getGroup = async (req: Request, res: Response): Promise<any> => {
+    const group = await this.splitwiseService.getGroup(req.params.id);
+    res.json(group);
+  };
+
+  getCategories = async (req: Request, res: Response): Promise<any> => {
+    const categories = await this.splitwiseService.getCategories();
+    res.json(categories);
+  };
+
+  getMembers = async (req: Request, res: Response): Promise<any> => {
+    const members = await this.splitwiseService.getMembers(req.params.id);
+    res.json(members);
   };
 }

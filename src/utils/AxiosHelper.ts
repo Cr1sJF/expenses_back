@@ -5,6 +5,7 @@ import axios, {
   CreateAxiosDefaults,
   InternalAxiosRequestConfig,
 } from 'axios';
+import { IApiResponse } from '../types';
 
 interface IAxiosConfig {
   /**
@@ -89,7 +90,7 @@ class ApiResponse<T> {
   status: number;
 
   request: any;
-  response!: any;
+  response!: IApiResponse<T>;
 
   duration!: number;
 
@@ -129,7 +130,7 @@ class ApiResponse<T> {
       this.status = constructor.data.status!;
       if ('data' in constructor.data) {
         this.response = {
-          success: this.status >= 200 && this.status < 300,
+          success: true,
           data: constructor.data.data as T,
         };
       }
