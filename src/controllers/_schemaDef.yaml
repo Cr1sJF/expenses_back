@@ -1,0 +1,10 @@
+# Object definition
+components:
+    securitySchemes:
+        External:
+            type: apiKey
+            in: header
+            name: "x-external-source"
+            description: "Si se ejecuta una API desde swagger, localhost, postman, etc., este valor debe ir en 'true' para todas los servicios que no son publicos"
+    schemas:
+        
