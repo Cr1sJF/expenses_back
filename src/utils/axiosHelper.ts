@@ -8,10 +8,10 @@ import axios, {
 import { getArrayConfig } from "../config";
 import AxiosLogger from "../models/Loggers/AxiosV2";
 import { ApiCredentials, AxiosResponseLogV2 } from "../types/Axios";
-import { IApiResponse2, IApiStringError, IApiSuccess, KeyValueObj } from "../types/General";
+import { IApiResponse as IApiResponse, IApiStringError, IApiSuccess, KeyValueObj } from "../types/General";
 import { extractObjectValue } from "./utils";
 import { RequestError } from "../models/Errors";
-import dayjs, { Dayjs } from "../utils/dayJs";
+import dayjs, { Dayjs } from "./dayJs";
 const log = new AxiosLogger("AXIOS");
 
 interface ITokenConfig {
@@ -140,7 +140,7 @@ class ApiResponse<T> {
 	status: number;
 
 	request: any;
-	response!: IApiResponse2<T>;
+	response!: IApiResponse<T>;
 
 	duration!: string;
 

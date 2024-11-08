@@ -36,24 +36,6 @@ export default (app: Application) => {
         servers: servers,
         components: {
           schemas: {
-            // success: {
-            // 	type: "object",
-            // 	required: ["success"],
-            // 	properties: {
-            // 		success: {
-            // 			type: "boolean",
-            // 			example: "true",
-            // 		},
-            // 		data: {
-            // 			type: {
-            // 				oneOf: [
-            // 					"string",
-            // 					"object"
-            // 				]
-            // 			}
-            // 		},
-            // 	},
-            // },
             invalid: {
               type: 'object',
               required: ['valid', 'errors'],
